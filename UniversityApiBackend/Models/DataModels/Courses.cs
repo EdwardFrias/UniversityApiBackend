@@ -23,5 +23,8 @@ namespace UniversityApiBackend.Models.DataModels
         public string CourseLargeDescription{ get; set; } = string.Empty;
 
         public Level Level { get; set; } = Level.Basic;
+
+        [Required]
+        public ICollection<Category> Categories { get; set; } = new List<Category>();
     }
 }
