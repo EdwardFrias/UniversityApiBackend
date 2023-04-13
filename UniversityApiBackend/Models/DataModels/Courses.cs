@@ -2,23 +2,26 @@
 
 namespace UniversityApiBackend.Models.DataModels
 {
+    public enum Level
+    {
+        Basic,
+        Medium,
+        Advanced,
+        Expert
+    }
     public class Courses :BaseEntity
     {
         [Required]
         [StringLength(50)]
         public string CourseName{ get; set; } = string.Empty;
 
+        [Required]
         [StringLength(280)]
-        public string CourseSmallDescription{ get; set; } = string.Empty; 
+        public string CourseSmallDescription{ get; set; } = string.Empty;
+        [Required]
         [StringLength(560)]
         public string CourseLargeDescription{ get; set; } = string.Empty;
 
-        public string ObjectivePublic { get; set; } = string.Empty;
-
-        public string Objectives { get; set; } = string.Empty;
-
-        public string Requieres { get; set; } = string.Empty;
-
-        public LevelEnum Level { get; set; }
+        public Level Level { get; set; } = Level.Basic;
     }
 }
